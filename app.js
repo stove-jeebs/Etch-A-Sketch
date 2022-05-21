@@ -64,3 +64,8 @@ reset === null || reset === void 0 ? void 0 : reset.addEventListener("click", fu
     }
     display(userInput());
 });
+
+let x=0;
+while(true){
+  ++x;
+}
