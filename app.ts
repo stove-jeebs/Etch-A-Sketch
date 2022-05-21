@@ -46,7 +46,7 @@ function display(len: number): void {
   for (let column of col) {
     column.addEventListener("click", function changeColor () {
 			column.style.backgroundColor = randRGB();
-			column.removeEventListener('mouseover', changeColor)
+			column.removeEventListener('click', changeColor)
     });
   }
 }
