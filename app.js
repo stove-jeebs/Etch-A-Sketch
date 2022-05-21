@@ -22,10 +22,6 @@
  *   3. display a new n x n grid
  *
  **/
-let x=0;
-while(true){
-  ++x;
-}
 function display(len) {
     const panel = document.querySelector("#panel");
     let n = len;
