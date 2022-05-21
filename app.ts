@@ -44,7 +44,7 @@ function display(len: number): void {
   const col = document.querySelectorAll(".col") as NodeListOf<HTMLDivElement>;
 
   for (let column of col) {
-    column.addEventListener("mouseover", function changeColor () {
+    column.addEventListener("click", function changeColor () {
 			column.style.backgroundColor = randRGB();
 			column.removeEventListener('mouseover', changeColor)
     });
