@@ -10,16 +10,16 @@
  *		1. grid/div changes color to a random color when hovered over
  *		2. a button that will send the user a popup asking for the number of square per side for the new grid
  *
- * - inputs:
+ *  - inputs:
  *		1. mouse hover
  *		2. button onclick
  *		3. user enters a value for the new grid's width and height (0 <= n <= 100)
  *
- * - outputs:
- *   1. random rgb value for each div
- *   2. a prompt appears when button is clicked
- *   2. the window popup prompts the user with an error message until an input of the valid format is entered
- *   3. display a new n x n grid
+ *  - outputs:
+ *    1. random rgb value for each div
+ *    2. a prompt appears when button is clicked
+ *    2. the window popup prompts the user with an error message until an input of the valid format is entered
+ *    3. display a new n x n grid
  *
  **/
 function display(len) {
@@ -40,10 +40,17 @@ function display(len) {
     }
     const col = document.querySelectorAll(".col");
     for (let column of col) {
-        column.addEventListener("mouseover", function (event) {
-            column.style.backgroundColor = "red";
+        column.addEventListener("mouseover", function changeColor() {
+            column.style.backgroundColor = randRGB();
+            column.removeEventListener('mouseover', changeColor);
         });
     }
+}
+function randRGB() {
+    const randNum = () => {
+        return Math.floor(Math.random() * 256);
+    };
+    return `rgb(${randNum()}, ${randNum()}, ${randNum()})`;
 }
 function userInput() {
     let input = prompt("please enter a number between 0 and 100");
